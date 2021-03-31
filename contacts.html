@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact Us | Zentech</title>
@@ -30,7 +31,25 @@ body{
 
 
 </style>
-
+<script src=
+"https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+    </script>
+  
+    <script>
+        /* Add "https://api.ipify.org?format=json" statement
+           this will communicate with the ipify servers in
+           order to retrieve the IP address $.getJSON will
+           load JSON-encoded data from the server using a
+           GET HTTP request */
+  
+        $.getJSON("https://api.ipify.org?format=json",
+                                          function(data) {
+  
+            // Setting text of element P with id gfg
+            $("#gfg").html(data.ip);
+      
+        })
+    </script>
 </head>
 <body>
   <nav class="navbar navbar-expand-md navbar-light fixed-top bg-light"id="n1">
@@ -74,6 +93,7 @@ body{
     <div class="lg:w-1/2 md:w-2/3 mx-auto">
       <div class="flex flex-wrap -m-2">
         <div class="p-2 w-1/2">
+          <input id="fff" name="$lol">
           <input class="w-full bg-gray-100 rounded border border-gray-400 focus:outline-none focus:border-indigo-500 text-base px-4 py-2" placeholder="Name" type="text" name="name">
         </div>
         <div class="p-2 w-1/2">
@@ -83,8 +103,8 @@ body{
           <textarea class="w-full bg-gray-100 rounded border border-gray-400 focus:outline-none h-48 focus:border-indigo-500 text-base px-4 py-2 resize-none block" placeholder="Message" type="message" name="User message"></textarea>
         </div>
         <input type="submit" class="flex mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg" data-toggle="modal" data-target="#exampleModal" value="Submit" name="Submit">
-    
         
+        <p id="gfg"></p>
         <div class="p-2 w-full pt-8 mt-8 border-t border-gray-200 text-center">
           <p>Or else, mail to: <a class="text-indigo-500" id="mail" href = ""></a></p>
           <p class="leading-normal my-5">Zentech
